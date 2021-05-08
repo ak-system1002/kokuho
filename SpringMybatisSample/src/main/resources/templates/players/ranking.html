@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+  <head>
+    <title>Ranking Player</title>
+  </head>
+  <body>
+    <div class="panel panel-primary" layout:fragment="content">
+      <div class="panel-heading">
+        Listing Players
+        <a href="/players/new" class="btn btn-default btn-xs pull-right">New</a>
+        <a href="/players/ranking" class="btn btn-default btn-xs pull-right">Ranking</a>
+      </div>
+      <div class="panel-body" th:if="!${rankings.size()}">
+        <p>Players are empty</p>
+      </div>
+      <table class="table" th:if="${rankings.size()}">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Team</th>
+            <th>Point</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="ranking:${rankings}" th:object="${ranking}">
+            <td th:text="*{rank}"></td>
+            <td th:text="*{team}"></td>
+            <td th:text="*{point}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

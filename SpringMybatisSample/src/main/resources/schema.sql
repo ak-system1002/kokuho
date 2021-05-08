@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS player (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  name varchar(255) DEFAULT NULL,
+  team varchar(255) DEFAULT NULL,
+  point bigint(20) DEFAULT NULL,
+  PRIMARY KEY (id),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS ranking (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  rank bigint(20) DEFAULT NULL,
+  team varchar(255) DEFAULT NULL,
+  point bigint(20) DEFAULT NULL,
+  PRIMARY KEY (id),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
