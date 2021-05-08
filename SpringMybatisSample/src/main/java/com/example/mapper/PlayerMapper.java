@@ -34,11 +34,11 @@ public interface PlayerMapper {
     @Select("select * from player where id = #{id}")
     Player findOne(Long id);
 
-    @Insert("insert into player (name, team, position) values (#{name}, #{team}, #{position})")
+    @Insert("insert into player (name, team, point) values (#{name}, #{team}, #{point})")
     @Options(useGeneratedKeys = true)
     void save(Player player);
 
-    @Update("update player set name = #{name}, team = #{team}, position = #{point} where id = #{id}")
+    @Update("update player set name = #{name}, team = #{team}, point = #{point} where id = #{id}")
     void update(Player player);
 
     @Delete("delete from player where id = #{id}")
